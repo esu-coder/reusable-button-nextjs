@@ -1,0 +1,52 @@
+.btn {
+    outline-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+@mixin solid-color($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+
+    &:hover {
+        background-color: lighten($color: $bg-color, $amount: 10%);
+    }
+}
+
+@mixin outlined($bg-color, $text-color) {
+    background-color: transparent;
+    color: $bg-color;
+    border: 2px solid $bg-color;
+
+    &:hover {
+        background-color: $bg-color;
+        color: $text-color;
+    }
+}
+
+.primary {
+    @include solid-color(#6a14f3, #fff);
+}
+
+.secondary {
+    @include solid-color(gold, #000);
+}
+
+.primary_outline {
+    @include outlined(#6a14f3, #fff);
+}
+
+.secondary_outline {
+    @include outlined(gold, #000);
+}
+
+.small {
+    font-size: 1rem;
+}
+
+.large {
+    font-size: 1.2rem;
+}
